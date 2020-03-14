@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Board</title>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+		<script>
+			$(function(){
+				$('#insertBtn').click(function(){
+					if($('#lsubject').val()==""){
+						alert('제목을 입력하세요');
+						$('#lsubject').focus();
+						return false;
+					}
+					if($('#lname').val()==""){
+						alert('이름을 입력하세요');
+						$('#lname').focus();
+						return false;
+					}
+					if($('#lpw').val()==""){
+						alert('비밀번호를 입력하세요');
+						$('#lpw').focus();
+						return false;
+					}
+					if($('#lmemo').val()==""){
+						alert('내용을 입력하세요');
+						$('#lmemo').focus();
+						return false;
+					}
+					
+					console.log(123);
+					$('#boardWriteForm').attr('action','/mvc1Pattern/board/insertLsjBoard.jsp').submit();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<!-- wrap -->
+		<div class="wrap">
+			<!-- form -->
+			<form name="boardWriteForm" method="POST" id="boardWriteForm">
+				<!-- table -->
+				<table class="table" border="1">
+					<!-- thead -->
+					<thead>
+						<tr>
+							<th colspan="2">게시판 글쓰기</th>
+						</tr>
+					</thead>
+					<!-- //thead -->
+					<!-- tbody -->
+					<tbody>
+						<tr>
+							<td class="info_title">제목</td>
+							<td class="info_input">
+								<input type="text" name="lsubject" id="lsubject" placeholder ="제목을 입력하세요" />
+							</td>
+						</tr>
+						<tr>
+							<td class="info_title">이름</td>
+							<td class="info_input">
+								<input type="text" name="lname" id="lname" placeholder ="이름을 입력하세요" />
+							</td>
+						</tr>
+						<tr>
+							<td class="info_title">비밀번호</td>
+							<td class="info_input">
+								<input type="password" name="lpw" id="lpw" placeholder ="비밀번호를 입력하세요" />
+							</td>
+						</tr>
+						<tr>
+							<td class="info_title">내용</td>
+							<td class="info_input">
+								<textarea name="lmemo" id="lmemo" placeholder="내용을 입력하세요"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="info_button_group">
+								<input type="button" value="글쓰기" class="btn" id="insertBtn">
+								<input type="button" value="다시 입력" id="retry" class="btn">
+							</td>
+						</tr>
+					</tbody>
+					<!-- //tbody -->
+				</table>
+				<!-- //table -->
+			</form>
+			<!-- //form -->
+		</div>
+		<!-- //wrap -->
+	</body>
+</html>

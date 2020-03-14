@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>SignUp</title>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+		<script>
+			$(function(){
+				$('#insertBtn').click(function(){
+					$('#memberForm').attr('action','/mvc1Pattern/member/insertLsjMem.jsp').submit();
+				});
+				$('#selectBtn').click(function(){
+					$('#memberForm').attr('action','/mvc1Pattern/member/selectAllLsjMem.jsp').submit();
+				});
+				$('#searchBtn').click(function(){
+					$('#memberForm').attr('action','/mvc1Pattern/member/searchLsjMem.jsp').submit();
+				});
+				$('#updateBtn').click(function(){
+					$('#memberForm').attr('action','/mvc1Pattern/member/updateLsjMem.jsp').submit();
+				});
+				$('#likeSearchBtn').click(function(){
+					$('#memberForm').attr('action','/mvc1Pattern/member/likeSearchLsjMem.jsp').submit();
+				});
+				$('#deleteBtn').click(function(){
+					$('#memberForm').attr('action','/mvc1Pattern/member/deleteLsjMem.jsp').submit();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<!-- wrap -->
+		<div class="wrap">
+			<!--memberForm -->
+			<form name="memberForm" method="GET" id="memberForm">
+				<!-- table -->
+				<table class="table">
+				
+					<!-- tr table_title -->
+					<tr>
+						<th colspan="2" class="table_title">
+							회원가입 / 조회 / 수정 / 삭제
+						</th>
+					</tr>
+					<!-- //tr -->		
+					
+					<!-- tr info -->	
+		
+					<tr>
+						<td class="info_title">아이디</td>
+						<td class="info_input"><input type="text" name="lid" placeholder="아이디를 입력하세요"></td>
+					</tr>
+					<tr>
+						<td class="info_title">비밀번호</td>
+						<td class="info_input"><input type="password" name="lpw" placeholder="비밀번호를 입력하세요"></td>
+					</tr>
+					<tr>
+						<td class="info_title">이름</td>
+						<td class="info_input"><input type="text" name="lname" id="lname" placeholder ="이름을 입력하세요">
+							<span>* 수정/삭제/조회 시 이름 사용</span></td>
+					</tr>
+					<tr>
+						<td class="info_title">성별</td>
+						<td class="info_input"><input type="text" name="lgender" placeholder="M or F"></td>
+					</tr>
+					<tr>
+						<td class="info_title">생년월일</td>
+						<td class="info_input"><input type="text" name="lbirth" placeholder="YYMMDD"></td>
+					</tr>
+					<tr>
+						<td class="info_title">이메일</td>
+						<td class="info_input"><input type="text" name="lemail" placeholder="이메일을 입력하세요"></td>
+					</tr>
+					<tr>
+						<td class="info_title">핸드폰</td>
+						<td class="info_input"><input type="text" name="lhp" placeholder="하이픈 없이 입력하세요"></td>
+					</tr>
+					<tr>
+						<td class="info_title">우편번호</td>
+						<td class="info_input"><input type="text" name="lpostno" placeholder="우편번호 5자리"></td>
+					</tr>
+					<tr>
+						<td class="info_title">주소</td>
+						<td class="info_input"><input type="text" name="laddr" placeholder="주소를 입력하세요"></td>
+					</tr>
+			
+					<!-- //tr info -->
+					
+					<!-- tr info_button_group -->
+					<tr>
+						<td colspan="2" class="info_button_group">
+							<input type="button" value="입력" class="btn" id="insertBtn">
+							<input type="button" value="조회" class="btn" id="selectBtn">
+							<input type="button" value="이름검색" class="btn" id="searchBtn">
+							<input type="button" value="키워드검색" class="btn" id="likeSearchBtn">
+							<input type="button" value="수정" class="btn" id="updateBtn">
+							<input type="button" value="삭제" class="btn" id="deleteBtn">
+							<input type="button" value="다시 입력" id="retry" class="btn">
+						</td>
+					</tr>	
+					<!-- //tr info_button_group -->
+				</table>
+				<!-- //table -->
+			</form>
+			<!-- //memberForm -->
+		</div>
+		<!-- //wrap -->
+	</body>
+</html>
